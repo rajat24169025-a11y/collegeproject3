@@ -1,0 +1,177 @@
+
+        :root {
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --text-color: #212529;
+            --border-color: #dee2e6;
+            --accent-color: #007bff;
+            --note-bg: #fff3cd; 
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode {
+            --bg-primary: #343a40;
+            --bg-secondary: #212529;
+            --text-color: #f8f9fa;
+            --border-color: #495057;
+            --accent-color: #adb5bd;
+            --note-bg: #495057;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-primary);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .user-info {
+            font-weight: bold;
+        }
+
+        #modeToggle {
+            margin-left: 15px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+
+        .controls {
+            flex: 0 0 300px;
+            margin-right: 20px;
+            padding: 15px;
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .notes-grid {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .note-card {
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            background-color: var(--note-bg);
+            display: flex;
+            flex-direction: column;
+            cursor: grab; 
+            position: relative;
+        }
+
+        .note-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+           
+        }
+
+        .note-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8em;
+            color: #6c757d;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 10px;
+        }
+
+        .note-actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            margin-left: 10px;
+            color: var(--accent-color);
+        }
+
+        .note-actions button.delete {
+            color: #dc3545;
+        }
+
+       
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: var(--bg-secondary);
+            color: var(--text-color);
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        
+        .note-card.pinned {
+            border: 3px solid var(--accent-color);
+            order: -1; 
+        }
+        .note-card.pinned::before {
+            content: '📌 Pinned';
+        
+        }
+
+      
+        .category-red { background-color: #ffcccc; }
+        .category-blue { background-color: #cceeff; }
+        .category-green { background-color: #ccffcc; }
+
+        .dark-mode .category-red { background-color: #6a2a2a; }
+        .dark-mode .category-blue { background-color: #2a3d6a; }
+        .dark-mode .category-green { background-color: #2a6a3d; }
+
+        .login-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .login-form {
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .hidden {
+            display: none !important;
+        }

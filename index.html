@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Notes App (Hindi-English)</title>
+   <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div id="loginScreen" class="login-screen">
+        <form id="loginForm" class="login-form">
+            <h2>jay hind, welcome to your Note</h2>
+            <label for="userNameOrEmail">Naam ya Email:</label>
+            <input type="text" id="userNameOrEmail" required aria-label="Apna naam ya email login ke liye daalo" tabindex="1">
+            <button type="submit" tabindex="2">Login Karein</button>
+        </form>
+    </div>
+
+    <div id="appContainer" class="hidden">
+        <header class="header">
+            <h1>Mere Notes</h1>
+            <div class="toggle-container">
+                <span id="userInfo" class="user-info"></span>
+                <button id="modeToggle" aria-label="Dark aur light mode badlein" tabindex="3">☀️ Dark Mode</button>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="controls">
+                <input type="text" id="searchBar" placeholder="Title, content, ya date se search karein..." aria-label="Notes search karein" tabindex="4">
+                
+                <label for="sortSelector">Sort Karein:</label>
+                <select id="sortSelector" aria-label="Notes ko criteria ke adhaar par sort karein" tabindex="5">
+                    <option value="dateCreated">Date Banne Par</option>
+                    <option value="lastEditedDate">Date Modify Hone Par</option>
+                    <option value="title">Alphabetically (Title)</option>
+                    <option value="category">Category Color Par</option>
+                </select>
+
+                <hr style="margin: 15px 0; border-color: var(--border-color);">
+
+                <h3>Naya Note Banayein</h3>
+                <input type="text" id="noteTitle" placeholder="Note Ka Title" aria-label="Naye note ka title" tabindex="6">
+                <select id="noteCategory" aria-label="Note ki category color chunein" tabindex="7">
+                    <option value="">Koi Color Nahi</option>
+                    <option value="category-red">Laal Category</option>
+                    <option value="category-blue">Neela Category</option>
+                    <option value="category-green">Hara Category</option>
+                </select>
+                <input type="text" id="noteBgImage" placeholder="Background Image URL (Optional)" aria-label="Note ka background image URL daalein" tabindex="8">
+                <textarea id="noteContent" placeholder="Note Ka Content" rows="5" aria-label="Naye note ka content" tabindex="9"></textarea>
+                <div id="wordCountDisplay" style="font-size: 0.8em; margin-bottom: 10px;">Word Count: 0 / 400</div>
+                <button id="createNoteBtn" aria-label="Naya note banayein" tabindex="10">Note Add Karein</button>
+            </div>
+
+            <div id="notesGrid" class="notes-grid">
+                </div>
+        </div>
+
+    </div>
+  
+    <script src="index.js">javascript</script>
+
+</body>
+</html>
